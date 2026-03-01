@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+    <section class="news-block">
+            <div class="container-fluid">
+                <div class="news-block_content">
+                    <h3>{{ category.name }} news</h3>
+                    {% for post in posts %}
+                    <div class="news-block_card">
+                        <img src="{{ post.image_url }}"
+                             alt="{{ post.title }}" class="news-block_card">
+                        <div class="news-block_info">
+                            <h3>{{ post.title|truncatewords:7 }}</h3>
+                            <span>{{ post.created_at|date:"d.m.Y" }}</span>
+                            <a href="#">#{{ post.category.name }}</a>
+                            <p>{{ post.description|truncatewords:20 }}</p>
+                            <a href="#">READ</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="news-block_adv">
+                    <h3>Advertising</h3>
+                    <div class="news-adv_card">
+                        <img src="https://media.istockphoto.com/id/1550071750/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BB%D0%B8%D1%81%D1%82%D1%8C%D1%8F-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%87%D0%B0%D0%B9%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0-camellia-sinensis-%D0%B2-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC-%D1%81%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D0%BC-%D1%81%D0%B2%D0%B5%D1%82%D0%B5-%D1%84%D0%B5%D1%80%D0%BC%D1%8B-%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.jpg?s=612x612&w=0&k=20&c=p3izBMNGiQE2qHtfAXEdcwcERizvhguzH2wZe8OyKYI=" alt="" class="news-adv_img">
+                        <img src="https://media.istockphoto.com/id/1550071750/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BB%D0%B8%D1%81%D1%82%D1%8C%D1%8F-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%87%D0%B0%D0%B9%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0-camellia-sinensis-%D0%B2-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC-%D1%81%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D0%BC-%D1%81%D0%B2%D0%B5%D1%82%D0%B5-%D1%84%D0%B5%D1%80%D0%BC%D1%8B-%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.jpg?s=612x612&w=0&k=20&c=p3izBMNGiQE2qHtfAXEdcwcERizvhguzH2wZe8OyKYI=" alt="" class="news-adv_img">
+                        <img src="https://media.istockphoto.com/id/1550071750/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BB%D0%B8%D1%81%D1%82%D1%8C%D1%8F-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%87%D0%B0%D0%B9%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0-camellia-sinensis-%D0%B2-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC-%D1%81%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D0%BC-%D1%81%D0%B2%D0%B5%D1%82%D0%B5-%D1%84%D0%B5%D1%80%D0%BC%D1%8B-%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.jpg?s=612x612&w=0&k=20&c=p3izBMNGiQE2qHtfAXEdcwcERizvhguzH2wZe8OyKYI=" alt="" class="news-adv_img">
+                        <img src="https://media.istockphoto.com/id/1550071750/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BB%D0%B8%D1%81%D1%82%D1%8C%D1%8F-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%87%D0%B0%D0%B9%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0-camellia-sinensis-%D0%B2-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC-%D1%81%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D0%BC-%D1%81%D0%B2%D0%B5%D1%82%D0%B5-%D1%84%D0%B5%D1%80%D0%BC%D1%8B-%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.jpg?s=612x612&w=0&k=20&c=p3izBMNGiQE2qHtfAXEdcwcERizvhguzH2wZe8OyKYI=" alt="" class="news-adv_img">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock%}
